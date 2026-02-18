@@ -451,7 +451,8 @@ class App(ttk.Frame):
             return
 
         # Plot each of the elevation curves
-        fig = Figure(figsize=(7.5, 6), facecolor=bgColour)
+        # fig = Figure(figsize=(7.5, 6), facecolor=bgColour)
+        fig = Figure(figsize=(7.5, 6))
         ax = fig.add_subplot(111)
         for i, e in enumerate(telescopeLst):
             haArr_hr, elArr_deg = self.obsManager.calc_elevation_curve(e)
@@ -901,7 +902,8 @@ class ArrayScanner(ttk.Frame):
         self.arrFrm.rowconfigure(5, weight=1)
 
         # Figure showing the scan of the antenna models
-        self.fig = Figure(figsize=(8.0, 7.0), facecolor=bgColour)
+        # self.fig = Figure(figsize=(8.0, 7.0), facecolor=bgColour)
+        self.fig = Figure(figsize=(8.0, 7.0))
         self.figCanvas = FigureCanvasTkAgg(self.fig, master=self)
         self.canvas = self.figCanvas.get_tk_widget()
         self.canvas.configure(highlightthickness=0)
@@ -1597,7 +1599,8 @@ class PlotFrame(ttk.Frame):
         if 'Windows-10' in platform.platform():
             self.fig = Figure(figsize=(13.0, 8.0))
         else:
-            self.fig = Figure(figsize=(13.0, 8.0), facecolor=bgColour)
+            # self.fig = Figure(figsize=(13.0, 8.0), facecolor=bgColour)
+            self.fig = Figure(figsize=(13.0, 8.0))
         self.figCanvas = FigureCanvasTkAgg(self.fig, master=self)
         self.canvas = self.figCanvas.get_tk_widget()
         self.canvas.configure(highlightthickness=0)
