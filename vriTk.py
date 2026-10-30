@@ -686,7 +686,7 @@ class ArraySelector(ttk.Frame):
         # Sampling cadence
         self.sampRtLab = ttk.Label(self, text="Sampling Cadence (s):")
         self.sampRtLab.grid(column=5, row=2, padx=5, pady=5, sticky="E")
-        sampRtLst_s = ["10", "30", "60", "100", "300", "600", "1200", "1800",
+        sampRtLst_s = ["0.001","0.01","0.1","1","10", "30", "60", "100", "300", "600", "1200", "1800",
                        "3600"]
         self.sampRt_s = tk.StringVar()
         self.sampRtComb = ttk.Combobox(self, state="readonly",
@@ -1081,7 +1081,7 @@ class ObsInputs(ttk.Frame):
         self.pixScale_asec = tk.DoubleVar()
         self.pixScale_asec.trace("w", lambda dummy1, dummy2, dummy3:
                             self.event_generate("<<pixscale_changed>>"))
-        self.pixScale_asec.set(1.0)
+        self.pixScale_asec.set(0.031)
         self.pixScaEnt = ttk.Entry(self, width=5,
                                    textvariable=self.pixScale_asec)
         self.pixScaEnt.grid(column=2, row=1, padx=5, pady=5, sticky="W")
@@ -1113,7 +1113,7 @@ class ObsInputs(ttk.Frame):
                                    text="Source Declination (degrees):")
         self.decSrcLab.grid(column=9, row=0, padx=5, pady=5, sticky="E")
         self.dec_deg = tk.DoubleVar()
-        self.dec_deg.set(-20.0)
+        self.dec_deg.set(58.0)
         self.decValLab = ttk.Label(self, textvariable=self.dec_deg, width=5,
                                    anchor="e")
         self.decValLab.grid(column=10, row=0, padx=5, pady=5, sticky="EW")
@@ -1130,7 +1130,7 @@ class ObsInputs(ttk.Frame):
         self.freq_MHz = tk.StringVar()
         self.freq_MHz.trace("w", lambda dummy1, dummy2, dummy3:
                             self.event_generate("<<obsparm_changed>>"))
-        self.freq_MHz.set(1420.0)
+        self.freq_MHz.set(1420.405751768)
         self.freqEnt = ttk.Entry(self, width=10, textvariable=self.freq_MHz)
         self.freqEnt.grid(column=13, row=0, padx=5, pady=5, sticky="EW")
         
